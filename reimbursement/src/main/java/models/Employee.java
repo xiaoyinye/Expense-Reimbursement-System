@@ -1,19 +1,19 @@
 package models;
 
 public class Employee {
+    int employeeId;
     String firstName;
     String lastName;
     String username;
     String password;
-    int employeeId;
     int age;
 
-    public Employee(String firstName, String lastName, String username, String password, int employeeId, int age) {
+    public Employee(int employeeId, String firstName, String lastName, String username, String password, int age) {
+        this.employeeId = employeeId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
         this.password = password;
-        this.employeeId = employeeId;
         this.age = age;
     }
 
