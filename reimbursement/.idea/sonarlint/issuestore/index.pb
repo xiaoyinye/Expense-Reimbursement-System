@@ -1,13 +1,19 @@
 
-Q
-!src/main/java/models/Manager.java,8/e/8ec422d9900c1377f3fcd92e9d30178302078cf2
 Z
 *src/main/java/utils/ConnectionManager.java,7/2/72aef20665deb34b82e85c1a0d445b7f8f258229
 7
 pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
-^
-.src/main/java/models/ReimbursementRequest.java,3/9/396add04e6d0b4f6a9079c57c3af35627a79b53d
 R
 "src/main/java/models/Employee.java,8/e/8e46f898a4831b947d3f2718accd79dc5a3ae4c5
-R
-"src/main/java/dao/EmployeeDAO.java,0/8/08855a21c25e61ea564d5edb4028c8af3c2cca8a
+Q
+!src/main/java/models/Manager.java,8/e/8ec422d9900c1377f3fcd92e9d30178302078cf2
+Q
+!src/main/java/dao/ManagerDAO.java,c/1/c15e384bc049fb1a006f658d824c345aa5b42a14
+U
+%src/test/java/dao/ManagerDAOTest.java,8/6/869e4779a0c31f0a299061bff12569b99dd105d5
+^
+.src/main/java/models/ReimbursementRequest.java,3/9/396add04e6d0b4f6a9079c57c3af35627a79b53d
+V
+&src/test/java/dao/EmployeeDAOTest.java,0/6/063fefa992205978f7958c6e5ac09b1b5027fc77
+V
+&src/main/java/service/UserService.java,f/2/f2bf6a3d9f14ae9a85e78a6ec1a3f81261e3329c

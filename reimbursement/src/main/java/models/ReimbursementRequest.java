@@ -64,4 +64,16 @@ public class ReimbursementRequest {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "ReimbursementRequest{" +
+                "requestId=" + requestId +
+                ", amount=" + amount +
+                ", employeeId=" + employeeId +
+                ", managerId=" + managerId +
+                ", status='" + status + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

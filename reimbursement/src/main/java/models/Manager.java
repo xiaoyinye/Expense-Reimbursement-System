@@ -1,18 +1,18 @@
 package models;
 
 public class Manager {
+    int managerId;
     String firstName;
     String lastName;
     String username;
     String password;
-    int managerId;
 
-    public Manager(String firstName, String lastName, String username, String password, int managerId) {
+    public Manager(int managerId, String firstName, String lastName, String username, String password) {
+        this.managerId = managerId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
         this.password = password;
-        this.managerId = managerId;
     }
 
     public String getFirstName() {
@@ -53,6 +53,17 @@ public class Manager {
 
     public void setManagerId(int managerId) {
         this.managerId = managerId;
+    }
+
+    @Override
+    public String toString() {
+        return "Manager{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", managerId=" + managerId +
+                '}';
     }
 }
 
