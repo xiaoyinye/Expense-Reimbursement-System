@@ -1,0 +1,20 @@
+
+†
+java:S1319C"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ô¶¬Ô
+‹
+java:S1319N"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¤«÷ıÿÿÿÿÿ
+M
+java:S2629&"7Use the built-in formatting to construct this argument.(¾Œ¸Ó
+Y
+java:S2629)"7Use the built-in formatting to construct this argument.(Üµú£şÿÿÿÿ8™Å¿¥0
+T
+java:S26297"7Use the built-in formatting to construct this argument.(ù·ä£8ÍŸÑ¥0
+V	java:S125"<This block of commented-out lines of code should be removed.(—¿äùÿÿÿÿ
+W
+java:S3457&"AFormat specifiers should be used instead of string concatenation.(¾Œ¸Ó
+c
+java:S3457)"AFormat specifiers should be used instead of string concatenation.(Üµú£şÿÿÿÿ8´Å¿¥0
+^
+java:S34577"AFormat specifiers should be used instead of string concatenation.(ù·ä£8ñŸÑ¥0
+O
+java:S1128	"2Remove this unused import 'org.postgresql.Driver'.(£Ÿ…§8±™§¥0

@@ -1,0 +1,19 @@
+
+†
+java:S13196"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(²ÂÕÍ
+‹
+java:S1319:"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¬ï˜•ÿÿÿÿÿ
+†
+java:S1319>"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(½üã£
+‹
+java:S1319B"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Žàà¦ùÿÿÿÿ
+R
+java:S2629("7Use the built-in formatting to construct this argument.(¿¬–¦ýÿÿÿÿ
+R
+java:S2629+"7Use the built-in formatting to construct this argument.(Üµú£þÿÿÿÿ
+L
+java:S3416"1Update this logger to use "ManagerService.class".(Ö¿ºÂüÿÿÿÿ
+\
+java:S3457("AFormat specifiers should be used instead of string concatenation.(¿¬–¦ýÿÿÿÿ
+\
+java:S3457+"AFormat specifiers should be used instead of string concatenation.(Üµú£þÿÿÿÿ

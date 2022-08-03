@@ -1,0 +1,29 @@
+
+l
+java:S1192""JDefine a constant instead of duplicating this literal "last_name" 3 times.(ÀÒí†ùÿÿÿÿ8® ´ä¤0
+k
+java:S1192$"IDefine a constant instead of duplicating this literal "password" 3 times.(ÜØÖıÿÿÿÿ8œ€á¤0
+n
+java:S1192 "LDefine a constant instead of duplicating this literal "employee_id" 3 times.(ÑíÔ™şÿÿÿÿ8² ´ä¤0
+h
+java:S1192!"KDefine a constant instead of duplicating this literal "first_name" 3 times.(ò¿Ä†8² ´ä¤0
+k
+java:S1192#"IDefine a constant instead of duplicating this literal "username" 3 times.(¾µûûÿÿÿÿ8€á¤0
+‹
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¦¢ù´ÿÿÿÿÿ
+Y
+java:S2629S"7Use the built-in formatting to construct this argument.(ÂÕåûÿÿÿÿ8›Õæ¤0
+R
+java:S2629q"7Use the built-in formatting to construct this argument.(ñ²æëşÿÿÿÿ
+e
+java:S2095j"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÒÖ˜ª
+f
+java:S2095‹"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÒÖ˜ª
+e
+java:S2095G"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÒÖ˜ª
+e
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÒÖ˜ª
+c
+java:S3457S"AFormat specifiers should be used instead of string concatenation.(ÂÕåûÿÿÿÿ8ÇÖæ¤0
+\
+java:S3457q"AFormat specifiers should be used instead of string concatenation.(ñ²æëşÿÿÿÿ

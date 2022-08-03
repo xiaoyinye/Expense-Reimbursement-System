@@ -34,17 +34,17 @@ public class ManagerService {
         this.connectionManager = connectionManager;
     }
 
+    //made changes
     public int login(String username, String password) {
         Manager manager = managerDAO.verifyManager(username,password);
         logger.debug("manager is: " + manager);
         if(manager != null) {
             currentUserId = manager.getManagerId();
             logger.debug("currentId is: " + currentUserId);
-            return currentUserId;
         } else {
             logger.debug("manager login verification failed");
-            return -1;
         }
+        return currentUserId;
     }
 
     public void logout() {
