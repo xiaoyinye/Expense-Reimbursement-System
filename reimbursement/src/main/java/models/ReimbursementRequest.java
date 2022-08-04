@@ -17,6 +17,9 @@ public class ReimbursementRequest {
         this.description = description;
     }
 
+    public ReimbursementRequest() {
+    }
+
     public int getRequestId() {
         return requestId;
     }

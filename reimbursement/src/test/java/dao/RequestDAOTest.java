@@ -133,17 +133,18 @@ public class RequestDAOTest {
         Assert.assertEquals(0, result.getManagerId());
         Assert.assertEquals("pending", result.getStatus());
         Assert.assertEquals("gas fee", result.getDescription());
+
     }
 
     @Test
-    public void shouldReturnFirstRequestApprovedByFirstManager() {
-        requestDAO.resolve(1,1,"approved");
-        ReimbursementRequest result = requestDAO.getById(1);
-        Assert.assertEquals(1, result.getRequestId());
-        Assert.assertEquals(1000, result.getAmount(),0);
-        Assert.assertEquals(1, result.getEmployeeId());
+    public void shouldReturnFifthRequestApprovedByFirstManager() {
+        requestDAO.resolve(5,1,"approved");
+        ReimbursementRequest result = requestDAO.getById(5);
+        Assert.assertEquals(5, result.getRequestId());
+        Assert.assertEquals(100, result.getAmount(),0);
+        Assert.assertEquals(2, result.getEmployeeId());
         Assert.assertEquals(1, result.getManagerId());
         Assert.assertEquals("approved", result.getStatus());
-        Assert.assertEquals("plane tickets", result.getDescription());
+        Assert.assertEquals("gas fee", result.getDescription());
     }
 }

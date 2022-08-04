@@ -18,11 +18,15 @@ public class RequestDAO {
     }
 
 
+    /**
+     * get all requests in the database
+     * @return all requests
+     */
     public ArrayList<ReimbursementRequest> getAll() {
         Connection connection = null;
         ArrayList<ReimbursementRequest> requests = new ArrayList<>();
         try {
-            String sql = "select request_id, amount, employee_id , manager_id , status, description from requests";
+            String sql = "select request_id, amount, employee_id , manager_id , status, description from requests order by request_id";
             connection = connectionManager.getConnection();
             connection.setAutoCommit(false);
             PreparedStatement ps = connection.prepareStatement(sql);
@@ -62,11 +66,15 @@ public class RequestDAO {
         return requests;
     }
 
+    /**
+     * get all pending requests in database
+     * @return all pending requests
+     */
     public ArrayList<ReimbursementRequest> getAllPending() {
         Connection connection = null;
         ArrayList<ReimbursementRequest> requests = new ArrayList<>();
         try {
-            String sql = "select request_id, amount, employee_id , manager_id , status, description from requests where status = ?";
+            String sql = "select request_id, amount, employee_id , manager_id , status, description from requests where status = ? order by request_id";
             connection = connectionManager.getConnection();
             connection.setAutoCommit(false);
             PreparedStatement ps = connection.prepareStatement(sql);
@@ -107,11 +115,15 @@ public class RequestDAO {
         return requests;
     }
 
+    /**
+     * get all resolved requests in database
+     * @return all resolved requests
+     */
     public ArrayList<ReimbursementRequest> getAllResolved() {
         Connection connection = null;
         ArrayList<ReimbursementRequest> requests = new ArrayList<>();
         try {
-            String sql = "select request_id, amount, employee_id , manager_id , status, description from requests where status = ? or status = ?";
+            String sql = "select request_id, amount, employee_id , manager_id , status, description from requests where status = ? or status = ? order by request_id";
             connection = connectionManager.getConnection();
             connection.setAutoCommit(false);
             PreparedStatement ps = connection.prepareStatement(sql);
@@ -153,6 +165,11 @@ public class RequestDAO {
         return requests;
     }
 
+    /**
+     * find a specific request by its id
+     * @param id
+     * @return request that has the exact id
+     */
     public ReimbursementRequest getById(Integer id) {
         Connection connection = null;
         ReimbursementRequest request = null;
@@ -197,6 +214,11 @@ public class RequestDAO {
         return null;
     }
 
+    /**
+     * get all requests of employee with the specific id
+     * @param id
+     * @return all requests from a single employee
+     */
     public ArrayList<ReimbursementRequest> getByEmployeeId(Integer id) {
         Connection connection = null;
         ArrayList<ReimbursementRequest> requests = new ArrayList<>();
@@ -242,6 +264,11 @@ public class RequestDAO {
         return requests;
     }
 
+    /**
+     * insert a new request into database
+     * @param request
+     * @return the id of the newly inserted request
+     */
     public Integer insert(ReimbursementRequest request) {
         Connection connection = null;
         int newId = -1;
@@ -276,6 +303,13 @@ public class RequestDAO {
         return newId;
     }
 
+    /**
+     * change the status of a specified request
+     * @param requestId
+     * @param managerId
+     * @param decision
+     * @return true if changed successfully and false if changed unsuccessfully
+     */
     public boolean resolve(int requestId, int managerId, String decision) {
         Connection connection = null;
         boolean resolved = false;

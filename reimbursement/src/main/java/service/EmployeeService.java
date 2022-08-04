@@ -13,13 +13,11 @@ import java.util.ArrayList;
 
 public class EmployeeService {
     private static final Logger logger = LogManager.getLogger(EmployeeService.class.getName());
-    int currentUserId = -1;
-//    ConnectionManager connectionManager = new ConnectionManager("jdbc:postgresql://revature-java-project.cdat3vncn69a.us-east-1.rds.amazonaws.com:5432/reimbursement_database","jianglin1997", "Jl3467666", new Driver());
-//    EmployeeDAO employeeDAO = new EmployeeDAO(connectionManager);
-//    RequestDAO requestDAO = new RequestDAO(connectionManager);
+    int currentUserId = 0;
         EmployeeDAO employeeDAO;
         RequestDAO requestDAO;
         ConnectionManager connectionManager;
+
 
     public EmployeeService(ConnectionManager connectionManager, EmployeeDAO employeeDAO, RequestDAO requestDAO) {
         this.connectionManager = connectionManager;
@@ -33,37 +31,61 @@ public class EmployeeService {
         this.requestDAO = new RequestDAO(connectionManager);
     }
 
+    /**
+     * employee log in
+     * @param username
+     * @param password
+     * @return 0 if login failed and employee's id if login successfully
+     */
     public int login(String username, String password) {
         Employee employee = employeeDAO.verifyEmployee(username,password);
         logger.debug("employee is: " + employee);
         if(employee != null) {
             currentUserId = employee.getEmployeeId();
             logger.debug("currentId is: " + currentUserId);
-            return currentUserId;
         } else {
+            currentUserId = 0;
             logger.debug("employee login verification failed");
-            return -1;
         }
+        return currentUserId;
     }
 
-    public void logout() {
-        currentUserId = -1;
-    }
 
+    /**
+     * view employee's information
+     * @return employee
+     */
     public Employee viewInfo() {
         Employee employee = employeeDAO.getById(currentUserId);
         logger.debug("Employee is: " + employee);
         return employee;
     }
 
+    /**
+     * update employee's information
+     * @param firstname
+     * @param lastname
+     * @param password
+     * @param age
+     * @return true if updated successfully and false if updated unsuccessfully
+     */
     public boolean updateInfo(String firstname, String lastname, String password, Integer age) {
         return employeeDAO.updateInfo(currentUserId, firstname, lastname, password, age);
     }
 
+    /**
+     * submit a new request
+     * @param request
+     * @return the id of the newly inserted request
+     */
     public int submitRequest(ReimbursementRequest request) {
         return requestDAO.insert(request);
     }
 
+    /**
+     * view all pending requests
+     * @return all pending requests
+     */
     public ArrayList<ReimbursementRequest> viewPendingRequests() {
         ArrayList<ReimbursementRequest> requests = requestDAO.getByEmployeeId(currentUserId);
         ArrayList<ReimbursementRequest> target = new ArrayList<>();
@@ -75,6 +97,10 @@ public class EmployeeService {
         return target;
     }
 
+    /**
+     * view all resolved requests
+     * @return all resolved requests
+     */
     public ArrayList<ReimbursementRequest> viewResolvedRequests() {
         ArrayList<ReimbursementRequest> requests = requestDAO.getByEmployeeId(currentUserId);
         ArrayList<ReimbursementRequest> target = new ArrayList<>();
@@ -84,5 +110,9 @@ public class EmployeeService {
             }
         }
         return target;
+    }
+
+    public void setCurrentUserId(int currentUserId) {
+        this.currentUserId = currentUserId;
     }
 }

@@ -34,7 +34,8 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession userSession = request.getSession(true);
         Integer currentId = 0;
-        System.out.println(userSession.getId());
+        String user = null;
+        logger.debug("usersessionId: " + userSession.getId());
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String type = request.getParameter("type");
@@ -46,7 +47,9 @@ public class LoginServlet extends HttpServlet {
         }
         if(type.equals("manager")) {
             currentId = managerService.login(username,password);
+            user = "manager";
             userSession.setAttribute("currentId",currentId);
+            userSession.setAttribute("user",user);
             logger.debug("currentId is: " + currentId);
             if(currentId != 0) {
                 response.setContentType("text/plain");
@@ -59,7 +62,9 @@ public class LoginServlet extends HttpServlet {
             }
         }else if(type.equals("employee")) {
             currentId = employeeService.login(username,password);
+            user = "employee";
             userSession.setAttribute("currentId",currentId);
+            userSession.setAttribute("user",user);
             logger.debug("currentId is: " + currentId);
             if(currentId != 0) {
                 response.setContentType("text/plain");

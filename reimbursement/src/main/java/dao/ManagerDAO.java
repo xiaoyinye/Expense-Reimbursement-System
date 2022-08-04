@@ -19,6 +19,11 @@ public class ManagerDAO {
         this.connectionManager = connectionManager;
     }
 
+    /**
+     * find a specific manager by his/her id
+     * @param id
+     * @return manager who has the exact id
+     */
     public Manager getById(Integer id) {
         Connection connection = null;
         Manager manager = null;
@@ -54,6 +59,12 @@ public class ManagerDAO {
         return manager;
     }
 
+    /**
+     * verify if a manager with the provided username and password is in database
+     * @param username
+     * @param password
+     * @return the corresponding manager
+     */
     public Manager verifyManager(String username, String password) {
         Connection connection = null;
         Manager manager = null;

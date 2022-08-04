@@ -17,11 +17,15 @@ public class EmployeeDAO {
         this.connectionManager = connectionManager;
     }
 
+    /**
+     * get all employees in the database
+     * @return all employees
+     */
     public ArrayList<Employee> getAll() {
         Connection connection = null;
         ArrayList<Employee> employees = new ArrayList<>();
         try {
-            String sql = "select employee_id, first_name, last_name, username, password, age from employees";
+            String sql = "select employee_id, first_name, last_name, username, password, age from employees order by employee_id";
             connection = connectionManager.getConnection();
             connection.setAutoCommit(false);
             PreparedStatement ps = connection.prepareStatement(sql);
@@ -61,7 +65,11 @@ public class EmployeeDAO {
         return employees;
     }
 
-
+    /**
+     *  find a specific employee by his/her id
+     * @param id
+     * @return employee who has the exact id
+     */
     public Employee getById(Integer id) {
         Connection connection = null;
         Employee employee = null;
@@ -98,6 +106,15 @@ public class EmployeeDAO {
         return employee;
     }
 
+    /**
+     * update an employee's information who has the id number provided
+     * @param id
+     * @param firstname
+     * @param lastname
+     * @param password
+     * @param age
+     * @return true for updating successfully and false for updating unsuccessfully
+     */
     public boolean updateInfo(Integer id, String firstname, String lastname, String password, Integer age) {
         Connection connection = null;
         try {
@@ -129,6 +146,12 @@ public class EmployeeDAO {
 
     }
 
+    /**
+     * verify if an employee with the provided username and password is in database
+     * @param username
+     * @param password
+     * @return the corresponding employee
+     */
     public Employee verifyEmployee(String username, String password) {
         Connection connection = null;
         Employee employee = null;

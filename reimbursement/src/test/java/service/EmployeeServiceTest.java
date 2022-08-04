@@ -30,18 +30,12 @@ public class EmployeeServiceTest {
     }
 
     @Test
-    public void shouldFailedAndReturnNegativeOne() {
+    public void shouldFailedAndReturnZero() {
         when(employeeDAOMock.verifyEmployee("wrongusername","wrongpassword")).thenReturn(null);
         int actual = employeeService.login("wrongusername","wrongpassword");
-        Assert.assertEquals(-1,actual);
+        Assert.assertEquals(0,actual);
     }
 
-    @Test
-    public void currentIdShouldBeNagativeOne() {
-        employeeService.logout();
-        int actual = employeeService.currentUserId;
-        Assert.assertEquals(-1,actual);
-    }
 
     @Test
     public void viewInfoTest() {
